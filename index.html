@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Quiz 1: BMI Calculator</title>
+    // Bootstrap 5 Setup
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    // JS Setup
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    // Google Fonts Satisfy Setup
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+
+    // Link to CSS File
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript">
+    function calculateBMI(){
+    var weight=document.getElementById('weighT').value;
+    var height=document.getElementById('heighT').value;
+    var bmi=weight/Math.pow(height,2)
+    var roundedbmi=Math.round(bmi*10)/10
+        if (roundedbmi<=18.5){
+            document.getElementById('outpuT').innerText=`Your BMI is ${roundedbmi}. You are underweight.`;
+        }
+        else if (roundedbmi>=18.5 && roundedbmi<=25){
+            document.getElementById('outpuT').innerText=`Your BMI is ${roundedbmi}. You are at a healthy weight.`;
+        }
+        else if (roundedbmi>=25 && roundedbmi<=30){
+            document.getElementById('outpuT').innerText=`Your BMI is ${roundedbmi}. You are overweight.`;
+        }
+        else if (roundedbmi>=30){
+            document.getElementById('outpuT').innerText=`Your BMI is ${roundedbmi}. You are obese.`;
+        }
+    }
+    </script>
+</head>
+<body>
+    <div class="container mt-5 mb-5 rounded">
+        <h1 class="mt-2 mb-2 text-center">BMI Calculator</h1>
+        <div class="text-center">
+            <p><strong>BMI</strong> is a measurement of a person's leanness or corpulence based on their height and weight, and is intended to quantify tissue mass. It is widely used as a general indicator of whether a person has a healthy body weight for their height.</p>
+           <form action="">
+            <input type="number" name="weight" id="weighT" placeholder="Enter weight (kg)">
+            <input type="number" name="height" id="heighT" placeholder="Enter height (m)">
+           </form>
+            <hr/>
+            <button type="button" class="btn btn-primary" onclick="calculateBMI()">Calculate</button>
+            <button type="button" class="btn btn-primary" onClick="window.location.reload()">Refresh</button>
+            <p id="outpuT" class="mt-2 mb-2">[View your results here.]</p>
+            <h3 class="text-center mt-2 mb-2"><a href="https://yprecones-9e.github.io/Q2_EXERCISE2_Precones-Yciar/" target="_blank">Yciar L. Precones | Grade 9-Emerald</a></h3>
+        </div>
+    </div>
+</body>
+</html>
